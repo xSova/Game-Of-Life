@@ -1,17 +1,28 @@
 public class cell {
-       private int alive = 0;
-    
-       public cell(int alive) {
-        this.alive = alive;
-    }
-    
-    public int getAlive() {
-        return alive;
-    }
+    private boolean isAlive = false;
+    private boolean willSurvive = false;
+    private int xCoordinate = 0;
+    private int yCoordinate = 0;
 
-    public void setAlive(int alive) {
-        this.alive = alive;
+    public boolean isAlive() {
+        return isAlive;
     }
 
+    public void setAlive(boolean isAlive) {
+        this.isAlive = isAlive;
+    }
 
+    public boolean getWillSurvive() {
+        return willSurvive;
+    }
+
+    public void setWillSurvive(boolean willSurvive) {
+        this.willSurvive = willSurvive;
+    }
+
+    public static int findNumNeighbors() {
+        int numNeighbors = 0;
+        
+        return numNeighbors;
+    };
 }

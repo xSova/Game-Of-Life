@@ -12,30 +12,42 @@ import org.w3c.dom.events.EventException;
         //Using current generation, check for neigbors
         //Make changes to future generation based on current generation
 public class App {
+    
     public static Scanner scnr = new Scanner(System.in);
-    public static void gridSetting (String x, String y) {
-        int numColumns = Integer.parseInt(x);
-        int numRows = Integer.parseInt(y);
-        System.out.println("The grid is: " + String.valueOf(numRows) + " cells tall.");
-        System.out.println("The grid is: " + String.valueOf(numColumns) + " cells long.");
-        cell[] rowCells = {};
+
+    public static String plural(int bruh) {
+        String str = "";
+        if (bruh == 1) {
+            str = "cell";
+        } else if (bruh == 0) {
+            str = "cells";
+        } else {
+            str = "cells";
+        };
+        return str;
+    };
+
+    public static void gridSetting (int x, int y) {
+        int numColumns = x;
+        int numRows = y;
+        System.out.println("The grid is: " + String.valueOf(numRows) + " " + plural(y) + " tall.");
+        System.out.println("The grid is: " + String.valueOf(numColumns) + " " + plural(x) + " long.");
         };
 
-    public static String getInput (Integer x) {
-        String str = "";
+    public static int getInput (int x) {
+        int str;
         if (x == 1) {
-            System.out.println("How many rows columns should there be?");
-            str = scnr.nextLine();
-        } else if (x == 2) {
-            System.out.println("How many columns should there be?");
-            str = scnr.nextLine();
+            System.out.println("Width?");
+            str = scnr.nextInt();
         } else {
-            System.out.println("Error, invalid input.");
-        }
+            System.out.println("Height?");
+            str = scnr.nextInt();
+        };
         return str;
-    }
+    };
+
     public static void main(String[] args) throws Exception {
-        
-        System.out.println("test");
+        int[] dimensions = {getInput(1), getInput(2)};
+        gridSetting(dimensions[0], dimensions[1]);
    }
 }
