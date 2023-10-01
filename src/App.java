@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.w3c.dom.events.EventException;
-
-import javafx.scene.paint.Stop;
         //Each cell with one or no neighbors dies
         //Each cell with four or more neighbors dies
         //Each cell with two or three neighbors lives
@@ -38,8 +36,6 @@ public class App {
     }
     public static void main(String[] args) throws Exception {
         
-        
-        
-        gridSetting(col, row);
+        System.out.println("test");
    }
 }
